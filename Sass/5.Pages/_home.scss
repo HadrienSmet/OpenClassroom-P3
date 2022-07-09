@@ -1,0 +1,39 @@
+@media screen and (max-width: 600px) {
+    .restaurants-search {    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__location-info {
+            width: 100%;
+            display: flex;
+            background-color: $bg-shade-1;
+            color: $clr-txt-secondary;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 20px;
+            justify-content: center;
+            z-index: -1;
+            & i {
+                color: $clr-txt-secondary;
+                font-size: 15px;
+                margin-right:18px;
+            }
+        }
+        &__button-bloc {
+            background-color: $bg-shade-2;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 50px;
+            box-shadow: -2px 1px 6px 0px rgba(0,0,0,0.49);
+            -webkit-box-shadow: -2px 1px 6px 0px rgba(0,0,0,0.49);
+            -moz-box-shadow: -2px 1px 6px 0px rgba(0,0,0,0.49);
+        }
+        & strong {
+            font-size: 24px;
+            font-weight: 900;
+        }
+    }
+}

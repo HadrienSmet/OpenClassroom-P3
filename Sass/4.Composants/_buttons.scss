@@ -1,0 +1,13 @@
+.btn {
+    padding: 20px;
+    border-radius: 65px;
+    border: none;
+    color: $clr-1;
+    background: $primary-color;
+    background: $gradient-primary-color;
+    font-size: 15px;
+    letter-spacing: 1px;
+    box-shadow: 1px 10px 9px 1px rgba(0,0,0,0.24);
+-webkit-box-shadow: 1px 10px 9px 1px rgba(0,0,0,0.24);
+-moz-box-shadow: 1px 10px 9px 1px rgba(0,0,0,0.24);
+}
