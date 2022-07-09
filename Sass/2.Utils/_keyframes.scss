@@ -1,0 +1,15 @@
+@import "./variables";
+@keyframes btnHoverEffect {
+    0%, 5% {
+        transform: translateY(0);
+        box-shadow: $btn-shadow;
+        -webkit-box-shadow: $btn-shadow;
+        -moz-box-shadow: $btn-shadow;
+    }
+    100% {
+        transform: translateY(-5%) scaleX(1.05);
+        box-shadow: $btn-shadowHover;
+        -webkit-box-shadow: $btn-shadowHover;
+        -moz-box-shadow: $btn-shadowHover;
+    }
+}

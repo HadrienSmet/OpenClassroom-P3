@@ -7,7 +7,10 @@
     background: $gradient-primary-color;
     font-size: 15px;
     letter-spacing: 1px;
-    box-shadow: 1px 10px 9px 1px rgba(0,0,0,0.24);
--webkit-box-shadow: 1px 10px 9px 1px rgba(0,0,0,0.24);
--moz-box-shadow: 1px 10px 9px 1px rgba(0,0,0,0.24);
+    box-shadow: $btn-shadow;
+    -webkit-box-shadow: $btn-shadow;
+    -moz-box-shadow: $btn-shadow;
+    &:hover {
+        animation: btnHoverEffect 0.5s infinite cubic-bezier(1,.14,.43,.83) alternate;
+    }
 }
