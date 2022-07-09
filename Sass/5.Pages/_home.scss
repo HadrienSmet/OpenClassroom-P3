@@ -36,4 +36,30 @@
             font-weight: 900;
         }
     }
+    .explanations {
+        padding: 50px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        h2 {
+            align-self: start;
+        }
+        &__step {
+            display: flex;
+            padding: 20px;
+            background-color: $bg-shade-2;
+            border-radius: 45px;
+            box-shadow: $btn-shadow;
+            &-number {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+                background-color: $primary-color;
+                color: $clr-1;
+                transform: translateX(-30px);
+            }
+        }
+    }
 }

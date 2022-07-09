@@ -1,16 +1,20 @@
 .btn {
-    padding: 20px;
-    border-radius: 65px;
-    border: none;
-    color: $clr-1;
-    background: $primary-color;
-    background: $gradient-primary-color;
-    font-size: 15px;
-    letter-spacing: 1px;
-    box-shadow: $btn-shadow;
-    -webkit-box-shadow: $btn-shadow;
-    -moz-box-shadow: $btn-shadow;
-    &:hover {
-        animation: btnHoverEffect 0.5s infinite cubic-bezier(1,.14,.43,.83) alternate;
-    }
+  padding: 20px;
+  border-radius: 65px;
+  border: none;
+  color: $clr-1;
+  background: $primary-color;
+  background: $gradient-primary-color;
+  font-size: 15px;
+  letter-spacing: 1px;
+  box-shadow: $btn-shadow;
+  -webkit-box-shadow: $btn-shadow;
+  -moz-box-shadow: $btn-shadow;
+  transition: 1s;
+  perspective: 50px;
+  z-index: 2;
+  &:hover {
+    animation: btnHoverEffect 0.5s infinite cubic-bezier(1, 0.14, 0.43, 0.83)
+      alternate;
+  }
 }
