@@ -1,20 +1,34 @@
 .btn {
+  position: relative;
+  overflow: hidden;
   padding: 20px;
   border-radius: 65px;
   border: none;
   color: $clr-1;
-  background: $primary-color;
-  background: $gradient-primary-color;
+  background: transparent;
+  // background: $gradient-primary-color;
   font-size: 15px;
   letter-spacing: 1px;
   box-shadow: $btn-shadow;
   -webkit-box-shadow: $btn-shadow;
   -moz-box-shadow: $btn-shadow;
-  transition: 1s;
-  perspective: 50px;
-  z-index: 2;
-  &:hover {
+    z-index: 3;
+    &::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgb(227,56,134);
+background: linear-gradient(0deg, rgba(227,56,134,1) 12%, rgba(147,86,220,1) 60%, rgba(255,121,218,1) 75%);
+    top: -70px;
+    left: -50px;
+    z-index: -1;
+  }
+  &:not(:active):hover {
     animation: btnHoverEffect 0.5s infinite cubic-bezier(1, 0.14, 0.43, 0.83)
       alternate;
+  }
+  &:active::after {
+    animation: btnActiveEffect .4s ease-in-out forwards;
   }
 }

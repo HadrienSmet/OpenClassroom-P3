@@ -13,3 +13,11 @@
         -moz-box-shadow: $btn-shadowHover;
     }
 }
+@keyframes btnActiveEffect {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: translate(-20px, -50px) rotate(110deg);
+    }
+}
