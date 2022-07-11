@@ -1,31 +1,34 @@
 @import "../2.Utils/variables";
-@media screen and (max-width: 600px) {
-    
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "main-fonts";
-        text-align: center;
-        &::selection {
-            background-color: $primary-color;
-            color: $clr-1;
-        }
-    }
-    h1 {
-        font-family: "fonts-header";
-    }
-    i {
-        color: $clr-txt-secondary;
-        transition: 0.3s;
-    }
-    a {
-        text-decoration: none;
-        color: $clr-2;
-    }
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+@media screen and (min-width: 1024px) {
+  body {
+    overflow: hidden;
+    height: 1vh;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "main-fonts";
+  text-align: center;
+  &::selection {
+    background-color: $primary-color;
+    color: $clr-1;
+  }
+}
+h1 {
+  font-family: "fonts-header";
+}
+i {
+  color: $clr-txt-secondary;
+  transition: 0.3s;
+}
+a {
+  text-decoration: none;
+  color: $clr-2;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

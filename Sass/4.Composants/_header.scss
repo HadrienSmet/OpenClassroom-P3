@@ -1,8 +1,15 @@
-@media screen and (max-width: 600px) {
-    header {
-        padding-top: 20px;
-        box-shadow: $header-shadow;
-        -webkit-box-shadow: $header-shadow;
-        -moz-box-shadow: $header-shadow;
-    }
+header {
+  box-shadow: $header-shadow;
+  -webkit-box-shadow: $header-shadow;
+  -moz-box-shadow: $header-shadow;
+  width: 60%;
+  top: 0;
+  left: 0;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    padding-top: 20px;
+  }
 }
