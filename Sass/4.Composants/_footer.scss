@@ -1,0 +1,72 @@
+@media screen and (max-width: 600px) {
+    footer {
+        padding: 20px;
+        background-color: $clr-txt-secondary;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 5px;
+        a {
+            color: $clr-1;
+            font-size: 14px;
+            position: relative;
+            transition: 0.4s ease-in-out;
+            &:nth-child(3) i {
+                font-size: 9px;
+            }
+            &:hover {
+                transform: translateX(15px);
+                &::before {
+                    opacity: 1;
+                }
+                &::after {
+                    transform: scaleX(1);
+                }
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                border-radius: 10px;
+                background-color: $clr-1;
+                left: -15px;
+                top: 2.5px;
+                opacity: 0;
+                transition: 0.4s ease-in-out;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                height: 2px;
+                background-color: $clr-1;
+                width: 100%;
+                bottom: -1px;
+                left: 0;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: 0.4s ease-in-out;
+            }
+        }
+        i {
+            color: $clr-1;
+            font-size: 12px;
+            transform: translateY(2px);
+            margin-right: 10px;
+        }
+        p {
+            font-size: 14px;
+            white-space: nowrap;
+        }
+    }
+    h4 {
+        font-family: "fonts-header";
+        color: $clr-1;
+        margin: 5px 0;
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    .footer-link {
+        display: flex;
+    }
+}

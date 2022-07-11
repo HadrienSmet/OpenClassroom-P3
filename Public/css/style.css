@@ -64,10 +64,13 @@
   }
 }
 @keyframes btnActiveEffect {
-  from {
+  0% {
     transform: rotate(0);
   }
-  to {
+  10% {
+    transform: rotate(15deg);
+  }
+  100% {
     transform: translate(-20px, -50px) rotate(110deg);
   }
 }
@@ -92,6 +95,7 @@
   -webkit-box-shadow: 1px 10px 9px 1px rgba(0, 0, 0, 0.24);
   -moz-box-shadow: 1px 10px 9px 1px rgba(0, 0, 0, 0.24);
   z-index: 3;
+  transition: 0.5s cubic-bezier(1, 0.18, 0.5, 0.81);
 }
 .btn::after {
   content: "";
@@ -107,10 +111,85 @@
 .btn:not(:active):hover {
   animation: btnHoverEffect 0.5s infinite cubic-bezier(1, 0.14, 0.43, 0.83) alternate;
 }
+.btn:active {
+  transform: scaleX(1.1);
+}
 .btn:active::after {
-  animation: btnActiveEffect 0.4s ease-in-out forwards;
+  animation: btnActiveEffect 0.5s ease-in-out forwards;
 }
 
+@media screen and (max-width: 600px) {
+  footer {
+    padding: 20px;
+    background-color: rgb(53, 53, 53);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 5px;
+  }
+  footer a {
+    color: white;
+    font-size: 14px;
+    position: relative;
+    transition: 0.4s ease-in-out;
+  }
+  footer a:nth-child(3) i {
+    font-size: 9px;
+  }
+  footer a:hover {
+    transform: translateX(15px);
+  }
+  footer a:hover::before {
+    opacity: 1;
+  }
+  footer a:hover::after {
+    transform: scaleX(1);
+  }
+  footer a::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: white;
+    left: -15px;
+    top: 2.5px;
+    opacity: 0;
+    transition: 0.4s ease-in-out;
+  }
+  footer a::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: white;
+    width: 100%;
+    bottom: -1px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.4s ease-in-out;
+  }
+  footer i {
+    color: white;
+    font-size: 12px;
+    transform: translateY(2px);
+    margin-right: 10px;
+  }
+  footer p {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  h4 {
+    font-family: "fonts-header";
+    color: white;
+    margin: 5px 0;
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+  .footer-link {
+    display: flex;
+  }
+}
 @media screen and (max-width: 600px) {
   header {
     padding-top: 20px;
@@ -281,6 +360,7 @@
     font-size: 30px;
     color: #9356DC;
     opacity: 0;
+    transform-origin: bottom;
   }
   .restaurants__card__grid-container--heart-animation i:last-child:hover {
     opacity: 1;
