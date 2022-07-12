@@ -1,26 +1,41 @@
 @import "./variables";
 @keyframes btnHoverEffect {
-    0%, 5% {
-        transform: translateY(0);
-        box-shadow: $btn-shadow;
-        -webkit-box-shadow: $btn-shadow;
-        -moz-box-shadow: $btn-shadow;
-    }
-    100% {
-        transform: translateY(-5%) scaleX(1.05);
-        box-shadow: $btn-shadowHover;
-        -webkit-box-shadow: $btn-shadowHover;
-        -moz-box-shadow: $btn-shadowHover;
-    }
+  0%,
+  5% {
+    transform: translateY(0);
+    box-shadow: $btn-shadow;
+    -webkit-box-shadow: $btn-shadow;
+    -moz-box-shadow: $btn-shadow;
+  }
+  100% {
+    transform: translateY(-5%) scaleX(1.05);
+    box-shadow: $btn-shadowHover;
+    -webkit-box-shadow: $btn-shadowHover;
+    -moz-box-shadow: $btn-shadowHover;
+  }
 }
 @keyframes btnActiveEffect {
-    0% {
-        transform: rotate(0);
-    }
-    10% {
-        transform: rotate(15deg);
-    }
-    100% {
-        transform: translate(-20px, -50px) rotate(110deg);
-    }
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: translate(-20px, -50px) rotate(110deg);
+  }
+}
+@keyframes btnActiveScale {
+  0% {
+    transform: scaleX(1);
+  }
+  25% {
+    transform: scaleX(0.85);
+  }
+  75% {
+    transform: scaleX(1.15);
+  }
+  100% {
+    transform: scaleX(1.1);
+  }
 }

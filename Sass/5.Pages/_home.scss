@@ -28,13 +28,12 @@
     background-color: $bg-shade-2;
     width: 100%;
     padding: 10px 20px;
-    text-align: left !important;
     box-shadow: $section-shadow;
     -webkit-box-shadow: $section-shadow;
     -moz-box-shadow: $section-shadow;
     z-index: 1;
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 75% 25%;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
       "hdr btn"
@@ -46,6 +45,8 @@
       @include columnCenter;
     }
     @media screen and (min-width: 1024px) {
+      height: 110px;
+      padding: 30px 25px;
       p:nth-child(2) {
         grid-area: txt;
         position: absolute;
@@ -68,6 +69,7 @@
   }
 }
 .explanations {
+  padding: 40px 30px;
   @media screen and (min-width: 768px) {
     padding: 10px 30px 20px;
     display: grid;
@@ -127,11 +129,11 @@
         transform: translateX(-30px);
       }
       @media screen and (max-width: 768px) {
-        left: 13%;
+        left: 13.5%;
       }
     }
     i {
-      margin-right: 15px;
+      margin-right: 10px;
       font-size: 15px;
     }
     &:hover i {

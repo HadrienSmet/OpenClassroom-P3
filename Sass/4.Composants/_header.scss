@@ -5,11 +5,27 @@ header {
   width: 60%;
   top: 0;
   left: 0;
-
   @media screen and (max-width: 1024px) {
     width: 100%;
   }
   @media screen and (max-width: 768px) {
     padding-top: 20px;
   }
+  i {
+    position: absolute;
+    top: 35px;
+    left: 15px;
+    font-size: 20px;
+    &:nth-child(1):hover {
+      opacity: 0;
+      + #purple {
+        opacity: 1;
+      }
+    }
+  }
+}
+#purple {
+  color: $primary-color;
+  opacity: 0;
+  z-index: -1;
 }

@@ -3,9 +3,6 @@ footer {
   padding: 20px;
   background-color: $clr-txt-secondary;
   @media screen and (min-width: 1024px) {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
