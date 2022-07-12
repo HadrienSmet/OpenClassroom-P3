@@ -5,6 +5,11 @@ header {
   width: 60%;
   top: 0;
   left: 0;
+  @media screen and (min-width: 1024px) {
+    i {
+      top: 25px;
+    }
+  }
   @media screen and (max-width: 1024px) {
     width: 100%;
   }
@@ -16,6 +21,9 @@ header {
     top: 35px;
     left: 15px;
     font-size: 20px;
+    @media screen and (min-width: 1024px) {
+      top: 18px;
+    }
     &:nth-child(1):hover {
       opacity: 0;
       + #purple {
