@@ -1,6 +1,9 @@
 .img-menu-container {
   width: 100%;
-  height: 40vh;
+  height: 260px;
+  @media screen and (max-width: 768px) {
+    height: 190px;
+  }
   &#paletteGout {
     background: url("../../assets/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg")
       center/cover;
@@ -20,20 +23,31 @@
 }
 .menu {
   background-color: $bg-shade-2;
-  padding: 35px 15px;
   border-radius: 25px 25px 0 0;
   position: relative;
-  //   transform: translateY(-25px);
   top: -26px;
+  // height: 610px;
+  @media screen and (min-width: 1024px) {
+    padding: 35px 35px 10px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    padding: 35px;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 35px 15px;
+  }
   &-header {
     position: relative;
     display: flex;
     margin-bottom: 15px;
     i {
-      font-size: 22px;
+      font-size: 30px;
       position: absolute;
       right: 15px;
       transform: translateY(5px);
+      @media screen and (max-width: 768px) {
+        font-size: 22px;
+      }
       &:nth-child(2) {
         z-index: 2;
         &:hover {
@@ -61,8 +75,47 @@
       position: absolute;
       bottom: -2px;
       left: 0;
+      transform: scaleX(0) translateX(45px);
+      opacity: 0;
+      transform-origin: right;
+      animation: titleAfterAnimation 0.7s ease-in-out forwards;
     }
   }
+  form {
+    @media screen and (min-width: 1024px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 100px;
+      grid-template-areas:
+        "strt dsh dsrt"
+        "btn btn btn";
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+        "strt dsh"
+        "dsrt btn";
+    }
+    button {
+      grid-area: btn;
+      padding: 15px 40px;
+      @media screen and (min-width: 1024px) {
+        width: 220px;
+        height: 50px;
+        bottom: -20px;
+        left: 41%;
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        width: 220px;
+        height: 50px;
+        bottom: -200px;
+        left: 24%;
+      }
+    }
+  }
+
   input[type="radio"] {
     display: none;
     &:checked {
@@ -87,16 +140,37 @@
     cursor: pointer;
     position: relative;
     height: 70px;
-    width: 95%;
     background-color: $clr-1;
     padding: 10px;
     border-radius: 10px;
+    transform: translateX(-30%);
+    opacity: 0;
+    animation: mealsAppear 0.4s ease-in-out forwards;
     display: grid;
     grid-template-columns: 85% 15%;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:
       "hdr prc"
       "txt prc";
+    @media screen and (min-width: 768px) {
+      width: 90%;
+    }
+    @media screen and (max-width: 768px) {
+      width: 95%;
+    }
+
+    &:nth-child(3) {
+      animation: mealsAppear 0.4s 0.1s ease-in-out forwards;
+    }
+    &:nth-child(5) {
+      animation: mealsAppear 0.4s 0.3s ease-in-out forwards;
+    }
+    &:nth-child(7) {
+      animation: mealsAppear 0.4s 0.5s ease-in-out forwards;
+    }
+    &:nth-child(9) {
+      animation: mealsAppear 0.4s 0.7s ease-in-out forwards;
+    }
     &:hover {
       span {
         transform: translateX(-70px);
@@ -131,12 +205,15 @@
     }
     span {
       grid-area: prc;
+      padding-left: 10px;
+      background-color: $clr-1;
       position: absolute;
       bottom: 0;
       transition: 0.3s ease-in-out;
     }
   }
   &-starter {
+    grid-area: strt;
     @include columnCenter;
     gap: 15px;
     margin-bottom: 20px;
@@ -145,6 +222,7 @@
     }
   }
   &-dishes {
+    grid-area: dsh;
     @include columnCenter;
     gap: 15px;
     margin-bottom: 20px;
@@ -153,14 +231,12 @@
     }
   }
   &-desserts {
+    grid-area: dsrt;
     @include columnCenter;
     gap: 15px;
     margin-bottom: 20px;
     &__check-container {
       @include checkContainer;
     }
-  }
-  button {
-    padding: 15px 40px;
   }
 }

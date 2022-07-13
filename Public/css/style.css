@@ -14,8 +14,9 @@
 /***********************Gradients**************************/
 /***********************Shadows****************************/
 @media screen and (min-width: 1024px) {
-  main {
+  #home {
     height: 650px;
+    width: 100%;
   }
 }
 * {
@@ -94,6 +95,36 @@ img {
   }
   100% {
     transform: scaleX(1.1);
+  }
+}
+@keyframes mealsAppear {
+  from {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes mealsAppear-desktop {
+  from {
+    transform: translateY(-30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes titleAfterAnimation {
+  from {
+    transform: scaleX(0) translateX(45px);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1) translateX(0);
+    opacity: 1;
   }
 }
 /*COLORS*/
@@ -189,6 +220,8 @@ img {
   background-color: white;
   border-radius: 15px;
   margin-bottom: 25px;
+  transform: translateX(-30%);
+  opacity: 0;
   transition: 0.3s ease-in-out;
 }
 @media screen and (min-width: 1024px) {
@@ -211,6 +244,38 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+}
+.restaurants__card:nth-child(1) {
+  animation: mealsAppear-desktop 0.4s 0.1s ease-in-out forwards;
+}
+@media screen and (max-width: 768px) {
+  .restaurants__card:nth-child(1) {
+    animation: mealsAppear 0.4s 0.1s ease-in-out forwards;
+  }
+}
+.restaurants__card:nth-child(2) {
+  animation: mealsAppear-desktop 0.4s 0.3s ease-in-out forwards;
+}
+@media screen and (max-width: 768px) {
+  .restaurants__card:nth-child(2) {
+    animation: mealsAppear 0.4s 0.3s ease-in-out forwards;
+  }
+}
+.restaurants__card:nth-child(3) {
+  animation: mealsAppear-desktop 0.4s 0.5s ease-in-out forwards;
+}
+@media screen and (max-width: 768px) {
+  .restaurants__card:nth-child(3) {
+    animation: mealsAppear 0.4s 0.5s ease-in-out forwards;
+  }
+}
+.restaurants__card:nth-child(4) {
+  animation: mealsAppear-desktop 0.4s 0.7s ease-in-out forwards;
+}
+@media screen and (max-width: 768px) {
+  .restaurants__card:nth-child(4) {
+    animation: mealsAppear 0.4s 0.7s ease-in-out forwards;
   }
 }
 .restaurants__card:hover {
@@ -297,6 +362,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
+    position: relative;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -404,24 +470,20 @@ h4 {
   display: flex;
 }
 
+@media screen and (min-width: 1024px) {
+  #home-header {
+    width: 60%;
+  }
+}
+
 header {
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.49);
   -webkit-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.49);
   -moz-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.49);
   background-color: white;
-  width: 60%;
+  width: 100%;
   top: 0;
   left: 0;
-}
-@media screen and (min-width: 1024px) {
-  header i {
-    top: 25px;
-  }
-}
-@media screen and (max-width: 1024px) {
-  header {
-    width: 100%;
-  }
 }
 @media screen and (max-width: 768px) {
   header {
@@ -435,7 +497,7 @@ header i {
   font-size: 20px;
   transition: 0.3s;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   header i {
     top: 18px;
   }
@@ -457,7 +519,7 @@ header i:nth-child(1):active + #purple {
   opacity: 0;
   transform: translateY(-15px);
   transition: 0.4s ease-in-out;
-  z-index: -1;
+  z-index: 0;
 }
 
 .restaurants-search {
@@ -626,7 +688,12 @@ header i:nth-child(1):active + #purple {
 
 .img-menu-container {
   width: 100%;
-  height: 40vh;
+  height: 260px;
+}
+@media screen and (max-width: 768px) {
+  .img-menu-container {
+    height: 190px;
+  }
 }
 .img-menu-container#paletteGout {
   background: url("../../assets/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg") center/cover;
@@ -643,10 +710,24 @@ header i:nth-child(1):active + #purple {
 
 .menu {
   background-color: #f7f6f6;
-  padding: 35px 15px;
   border-radius: 25px 25px 0 0;
   position: relative;
   top: -26px;
+}
+@media screen and (min-width: 1024px) {
+  .menu {
+    padding: 35px 35px 10px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .menu {
+    padding: 35px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .menu {
+    padding: 35px 15px;
+  }
 }
 .menu-header {
   position: relative;
@@ -654,10 +735,15 @@ header i:nth-child(1):active + #purple {
   margin-bottom: 15px;
 }
 .menu-header i {
-  font-size: 22px;
+  font-size: 30px;
   position: absolute;
   right: 15px;
   transform: translateY(5px);
+}
+@media screen and (max-width: 768px) {
+  .menu-header i {
+    font-size: 22px;
+  }
 }
 .menu-header i:nth-child(2) {
   z-index: 2;
@@ -685,6 +771,46 @@ header i:nth-child(1):active + #purple {
   position: absolute;
   bottom: -2px;
   left: 0;
+  transform: scaleX(0) translateX(45px);
+  opacity: 0;
+  transform-origin: right;
+  animation: titleAfterAnimation 0.7s ease-in-out forwards;
+}
+@media screen and (min-width: 1024px) {
+  .menu form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 100px;
+    grid-template-areas: "strt dsh dsrt" "btn btn btn";
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .menu form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "strt dsh" "dsrt btn";
+  }
+}
+.menu form button {
+  grid-area: btn;
+  padding: 15px 40px;
+}
+@media screen and (min-width: 1024px) {
+  .menu form button {
+    width: 220px;
+    height: 50px;
+    bottom: -20px;
+    left: 41%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .menu form button {
+    width: 220px;
+    height: 50px;
+    bottom: -200px;
+    left: 24%;
+  }
 }
 .menu input[type=radio] {
   display: none;
@@ -707,14 +833,38 @@ header i:nth-child(1):active + #purple {
   cursor: pointer;
   position: relative;
   height: 70px;
-  width: 95%;
   background-color: white;
   padding: 10px;
   border-radius: 10px;
+  transform: translateX(-30%);
+  opacity: 0;
+  animation: mealsAppear 0.4s ease-in-out forwards;
   display: grid;
   grid-template-columns: 85% 15%;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "hdr prc" "txt prc";
+}
+@media screen and (min-width: 768px) {
+  .menu label {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .menu label {
+    width: 95%;
+  }
+}
+.menu label:nth-child(3) {
+  animation: mealsAppear 0.4s 0.1s ease-in-out forwards;
+}
+.menu label:nth-child(5) {
+  animation: mealsAppear 0.4s 0.3s ease-in-out forwards;
+}
+.menu label:nth-child(7) {
+  animation: mealsAppear 0.4s 0.5s ease-in-out forwards;
+}
+.menu label:nth-child(9) {
+  animation: mealsAppear 0.4s 0.7s ease-in-out forwards;
 }
 .menu label:hover span {
   transform: translateX(-70px);
@@ -749,11 +899,14 @@ header i:nth-child(1):active + #purple {
 }
 .menu label span {
   grid-area: prc;
+  padding-left: 10px;
+  background-color: white;
   position: absolute;
   bottom: 0;
   transition: 0.3s ease-in-out;
 }
 .menu-starter {
+  grid-area: strt;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -772,6 +925,7 @@ header i:nth-child(1):active + #purple {
   transition: 0.4s ease-in-out;
 }
 .menu-dishes {
+  grid-area: dsh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -790,6 +944,7 @@ header i:nth-child(1):active + #purple {
   transition: 0.4s ease-in-out;
 }
 .menu-desserts {
+  grid-area: dsrt;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -806,9 +961,6 @@ header i:nth-child(1):active + #purple {
   transform: scaleX(0);
   transform-origin: right;
   transition: 0.4s ease-in-out;
-}
-.menu button {
-  padding: 15px 40px;
 }
 
 /*# sourceMappingURL=style.css.map */

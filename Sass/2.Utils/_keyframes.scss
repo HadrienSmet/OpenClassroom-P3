@@ -39,3 +39,33 @@
     transform: scaleX(1.1);
   }
 }
+@keyframes mealsAppear {
+  from {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes mealsAppear-desktop {
+  from {
+    transform: translateY(-30%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes titleAfterAnimation {
+  from {
+    transform: scaleX(0) translateX(45px);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1) translateX(0);
+    opacity: 1;
+  }
+}
