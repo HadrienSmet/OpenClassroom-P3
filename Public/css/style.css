@@ -13,6 +13,11 @@
 /*TOOLS*/
 /***********************Gradients**************************/
 /***********************Shadows****************************/
+@media screen and (min-width: 1024px) {
+  main {
+    height: 650px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -81,7 +86,7 @@ img {
   0% {
     transform: scaleX(1);
   }
-  25% {
+  15% {
     transform: scaleX(0.85);
   }
   75% {
@@ -116,20 +121,13 @@ img {
 .btn::after {
   content: "";
   position: absolute;
-  height: 600px;
-  width: 700px;
-  background: rgb(227, 56, 134);
-  background: linear-gradient(0deg, rgb(227, 56, 134) 12%, rgb(147, 86, 220) 60%, rgb(255, 121, 218) 75%);
-  top: -160px;
   z-index: -1;
   left: -50px;
-}
-@media screen and (max-width: 1024px) {
-  .btn::after {
-    height: 300px;
-    width: 300px;
-    top: -70px;
-  }
+  height: 300px;
+  width: 300px;
+  top: -70px;
+  background: rgb(227, 56, 134);
+  background: linear-gradient(0deg, rgb(227, 56, 134) 5%, #9356dc 59%, #ff79da 69%);
 }
 .btn:not(:active):hover {
   animation: btnHoverEffect 0.5s infinite cubic-bezier(1, 0.14, 0.43, 0.83) alternate;
@@ -151,8 +149,11 @@ img {
 }
 @media screen and (min-width: 1024px) {
   .restaurants {
-    padding: 10px 10px;
-    height: 60vh;
+    padding: 30px;
+    height: 350px;
+    width: 100%;
+    position: absolute;
+    top: 347px;
   }
 }
 .restaurants h2 {
@@ -194,7 +195,7 @@ img {
   .restaurants__card {
     display: block;
     position: relative;
-    height: 45vh;
+    height: 240px;
     width: 22%;
   }
 }
@@ -346,7 +347,7 @@ footer a:nth-child(3) i {
   }
 }
 footer a:hover::before {
-  opacity: 1;
+  transform: scaleY(1);
 }
 footer a:hover::after {
   transform: scaleX(1);
@@ -354,15 +355,14 @@ footer a:hover::after {
 footer a::before {
   content: "";
   position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 10px;
-  background-color: white;
-  left: -15px;
-  top: 2.5px;
-  opacity: 0;
-  transform-origin: bottom;
-  transition: 0.4s ease-in-out;
+  width: 3px;
+  height: 15px;
+  background-color: #99e2d0;
+  left: -20px;
+  top: 0px;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.2s ease-in-out;
 }
 footer a::after {
   content: "";
@@ -408,6 +408,7 @@ header {
   box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.49);
   -webkit-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.49);
   -moz-box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.49);
+  background-color: white;
   width: 60%;
   top: 0;
   left: 0;
@@ -432,6 +433,7 @@ header i {
   top: 35px;
   left: 15px;
   font-size: 20px;
+  transition: 0.3s;
 }
 @media screen and (min-width: 1024px) {
   header i {
@@ -439,15 +441,22 @@ header i {
   }
 }
 header i:nth-child(1):hover {
+  transform: translateY(10px);
   opacity: 0;
 }
 header i:nth-child(1):hover + #purple {
   opacity: 1;
+  transform: translateY(0);
+}
+header i:nth-child(1):active + #purple {
+  transform: translateY(0) scale(1.2);
 }
 
 #purple {
   color: #9356dc;
   opacity: 0;
+  transform: translateY(-15px);
+  transition: 0.4s ease-in-out;
   z-index: -1;
 }
 
@@ -469,10 +478,14 @@ header i:nth-child(1):hover + #purple {
 }
 @media screen and (min-width: 1024px) {
   .restaurants-search__location-info {
+    padding: 14.5px 20px;
     width: 40%;
     position: absolute;
     top: 0;
     right: 0;
+    box-shadow: -2px 1px 6px 0px rgba(0, 0, 0, 0.49);
+    -webkit-box-shadow: -2px 1px 6px 0px rgba(0, 0, 0, 0.49);
+    -moz-box-shadow: -2px 1px 6px 0px rgba(0, 0, 0, 0.49);
   }
 }
 @media screen and (max-width: 1024px) {
@@ -486,58 +499,55 @@ header i:nth-child(1):hover + #purple {
 }
 .restaurants-search__button-bloc {
   background-color: #f7f6f6;
-  width: 100%;
-  padding: 10px 20px;
   box-shadow: -2px 1px 6px 0px rgba(0, 0, 0, 0.49);
   -webkit-box-shadow: -2px 1px 6px 0px rgba(0, 0, 0, 0.49);
   -moz-box-shadow: -2px 1px 6px 0px rgba(0, 0, 0, 0.49);
   z-index: 1;
-  display: grid;
-  grid-template-columns: 75% 25%;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "hdr btn" "txt btn";
-}
-@media screen and (max-width: 1024px) {
-  .restaurants-search__button-bloc {
-    padding: 20px;
-    gap: 20px;
-    padding-bottom: 55px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 @media screen and (min-width: 1024px) {
   .restaurants-search__button-bloc {
-    height: 110px;
-    padding: 30px 25px;
-  }
-  .restaurants-search__button-bloc p:nth-child(2) {
-    grid-area: txt;
+    padding: 60px 55px 30px;
     position: absolute;
-    left: 15px;
-    transform: translateY(40px);
+    left: 0;
+    height: 300px;
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .restaurants-search__button-bloc {
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 55px;
   }
 }
 .restaurants-search strong {
   font-size: 24px;
   font-weight: 900;
 }
-@media screen and (min-width: 1024px) {
-  .restaurants-search strong {
-    grid-area: hdr;
-    position: absolute;
-    left: 15px;
-  }
-}
 .restaurants-search button {
-  grid-area: btn;
+  margin-top: 40px;
 }
 
 .explanations {
-  padding: 40px 30px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
+  .explanations {
+    padding: 15px 30px;
+    height: 300px;
+    position: absolute;
+    right: 0;
+    width: 60%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .explanations {
     padding: 10px 30px 20px;
     display: grid;
@@ -549,21 +559,15 @@ header i:nth-child(1):hover + #purple {
 }
 @media screen and (max-width: 768px) {
   .explanations {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
     padding: 50px 20px;
   }
 }
-@media screen and (min-width: 768px) {
+.explanations h2 {
+  align-self: start;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .explanations h2 {
     grid-area: hdr;
-  }
-}
-@media screen and (max-width: 768px) {
-  .explanations h2 {
-    align-self: start;
   }
 }
 .explanations__step {
@@ -622,22 +626,18 @@ header i:nth-child(1):hover + #purple {
 
 .img-menu-container {
   width: 100%;
-  min-height: 40vh;
+  height: 40vh;
 }
-
-#paletteGout {
+.img-menu-container#paletteGout {
   background: url("../../assets/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg") center/cover;
 }
-
-#noteEnchantee {
+.img-menu-container#noteEnchantee {
   background: url("../../assets/images/stil-u2Lp8tXIcjw-unsplash.jpg") center/cover;
 }
-
-#francaise {
+.img-menu-container#francaise {
   background: url("../../assets/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg") center/cover;
 }
-
-#delice {
+.img-menu-container#delice {
   background: url("../../assets/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg") center/cover;
 }
 

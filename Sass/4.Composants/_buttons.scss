@@ -15,23 +15,18 @@
   &::after {
     content: "";
     position: absolute;
-    height: 600px;
-    width: 700px;
+    z-index: -1;
+    left: -50px;
+    height: 300px;
+    width: 300px;
+    top: -70px;
     background: rgb(227, 56, 134);
     background: linear-gradient(
       0deg,
-      rgba(227, 56, 134, 1) 12%,
-      rgba(147, 86, 220, 1) 60%,
-      rgba(255, 121, 218, 1) 75%
+      rgba(227, 56, 134, 1) 5%,
+      $primary-color 59%,
+      $secondary-color 69%
     );
-    top: -160px;
-    z-index: -1;
-    left: -50px;
-    @media screen and (max-width: 1024px) {
-      height: 300px;
-      width: 300px;
-      top: -70px;
-    }
   }
   &:not(:active):hover {
     animation: btnHoverEffect 0.5s infinite cubic-bezier(1, 0.14, 0.43, 0.83)

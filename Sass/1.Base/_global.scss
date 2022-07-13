@@ -1,4 +1,9 @@
 @import "../2.Utils/variables";
+@media screen and (min-width: 1024px) {
+  main {
+    height: 650px;
+  }
+}
 * {
   margin: 0;
   padding: 0;

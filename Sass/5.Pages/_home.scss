@@ -11,10 +11,14 @@
     justify-content: center;
     z-index: -3;
     @media screen and (min-width: 1024px) {
+      padding: 14.5px 20px;
       width: 40%;
       position: absolute;
       top: 0;
       right: 0;
+      box-shadow: $section-shadow;
+      -webkit-box-shadow: $section-shadow;
+      -moz-box-shadow: $section-shadow;
     }
     @media screen and (max-width: 1024px) {
       width: 100%;
@@ -26,51 +30,44 @@
   }
   &__button-bloc {
     background-color: $bg-shade-2;
-    width: 100%;
-    padding: 10px 20px;
     box-shadow: $section-shadow;
     -webkit-box-shadow: $section-shadow;
     -moz-box-shadow: $section-shadow;
     z-index: 1;
-    display: grid;
-    grid-template-columns: 75% 25%;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-      "hdr btn"
-      "txt btn";
-    @media screen and (max-width: 1024px) {
-      padding: 20px;
-      gap: 20px;
-      padding-bottom: 55px;
-      @include columnCenter;
-    }
+    @include columnCenter;
+    gap: 20px;
     @media screen and (min-width: 1024px) {
-      height: 110px;
-      padding: 30px 25px;
-      p:nth-child(2) {
-        grid-area: txt;
-        position: absolute;
-        left: 15px;
-        transform: translateY(40px);
-      }
+      padding: 60px 55px 30px;
+      position: absolute;
+      left: 0;
+      height: 300px;
+      width: 40%;
+    }
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      padding: 20px;
+      padding-bottom: 55px;
     }
   }
   & strong {
     font-size: 24px;
     font-weight: 900;
-    @media screen and (min-width: 1024px) {
-      grid-area: hdr;
-      position: absolute;
-      left: 15px;
-    }
   }
   button {
-    grid-area: btn;
+    margin-top: 40px;
   }
 }
 .explanations {
-  padding: 40px 30px;
-  @media screen and (min-width: 768px) {
+  gap: 20px;
+  @include columnCenter;
+  @media screen and (min-width: 1024px) {
+    padding: 15px 30px;
+    height: 300px;
+    position: absolute;
+    right: 0;
+    width: 60%;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
     padding: 10px 30px 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -81,16 +78,12 @@
     gap: 0 40px;
   }
   @media screen and (max-width: 768px) {
-    @include columnCenter;
-    gap: 20px;
     padding: 50px 20px;
   }
   h2 {
-    @media screen and (min-width: 768px) {
+    align-self: start;
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
       grid-area: hdr;
-    }
-    @media screen and (max-width: 768px) {
-      align-self: start;
     }
   }
   &__step {

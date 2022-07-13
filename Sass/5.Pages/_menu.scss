@@ -1,22 +1,22 @@
 .img-menu-container {
   width: 100%;
-  min-height: 40vh;
-}
-#paletteGout {
-  background: url("../../assets/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg")
-    center/cover;
-}
-#noteEnchantee {
-  background: url("../../assets/images/stil-u2Lp8tXIcjw-unsplash.jpg")
-    center/cover;
-}
-#francaise {
-  background: url("../../assets/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg")
-    center/cover;
-}
-#delice {
-  background: url("../../assets/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg")
-    center/cover;
+  height: 40vh;
+  &#paletteGout {
+    background: url("../../assets/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg")
+      center/cover;
+  }
+  &#noteEnchantee {
+    background: url("../../assets/images/stil-u2Lp8tXIcjw-unsplash.jpg")
+      center/cover;
+  }
+  &#francaise {
+    background: url("../../assets/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg")
+      center/cover;
+  }
+  &#delice {
+    background: url("../../assets/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg")
+      center/cover;
+  }
 }
 .menu {
   background-color: $bg-shade-2;

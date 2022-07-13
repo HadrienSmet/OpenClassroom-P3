@@ -6,8 +6,11 @@
   -webkit-box-shadow: $section-shadow;
   -moz-box-shadow: $section-shadow;
   @media screen and (min-width: 1024px) {
-    padding: 10px 10px;
-    height: 60vh;
+    padding: 30px;
+    height: 350px;
+    width: 100%;
+    position: absolute;
+    top: 347px;
   }
   h2 {
     text-align: left;
@@ -41,7 +44,7 @@
     @media screen and (min-width: 1024px) {
       display: block;
       position: relative;
-      height: 45vh;
+      height: 240px;
       width: 22%;
     }
     @media screen and (max-width: 1024px) {
