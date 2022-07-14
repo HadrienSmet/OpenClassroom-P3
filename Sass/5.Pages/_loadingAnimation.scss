@@ -1,0 +1,89 @@
+#animation-bg {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: rgb(255, 226, 247);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 226, 247, 1) 72%,
+    rgba(255, 121, 218, 1) 100%
+  );
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.glass {
+  // position: absolute;
+  // top: 40%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  &-cup {
+    position: relative;
+    overflow: hidden;
+    border: 5px solid #80d3fde0;
+    border-radius: 0 0 60px 60px;
+    height: 105px;
+    width: 95px;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 125px;
+      width: 3200px;
+      left: 0;
+      background: url(../../assets/images/wine-removebg.png);
+      background-repeat: repeat-x;
+      transform: translate(0, 100%);
+      animation: wineLoading 4s cubic-bezier(0.51, 0.18, 0.46, 0.71) forwards;
+    }
+  }
+  &-foot {
+    clip-path: polygon(
+      47% 0,
+      53% 0,
+      55% 94%,
+      85% 97%,
+      91% 100%,
+      9% 100%,
+      15% 97%,
+      45% 94%
+    );
+    height: 65px;
+    width: 95px;
+    background-color: #80d3fde0;
+    position: relative;
+    transform: translateY(-5px);
+  }
+}
+.ohmyfood {
+  position: relative;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: $primary-color;
+    border-radius: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform-origin: left;
+    animation: underlineAnimation 6s ease-in-out infinite;
+  }
+  span {
+    font-size: 80px;
+    font-family: "fonts-header";
+    display: inline-block;
+    color: lighten($secondary-color, 22%);
+    @include letters-delay-displayer($letters-delay-displayer);
+    .neon {
+      font-family: "fonts-header";
+      position: absolute;
+      // top: 0;
+      color: $primary-color;
+      text-shadow: 0 0 10px #9256dcd3;
+      opacity: 0;
+      transform: translateY(-100%);
+      animation: lettersAnimation 4s linear infinite;
+    }
+  }
+}

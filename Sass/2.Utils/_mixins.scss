@@ -45,3 +45,10 @@
     }
   }
 }
+@mixin letters-delay-displayer($letters-delay-displayer) {
+  @each $i, $delay in $letters-delay-displayer {
+    &:nth-child(#{$i}) .neon {
+      animation-delay: #{$delay};
+    }
+  }
+}

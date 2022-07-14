@@ -69,3 +69,55 @@
     opacity: 1;
   }
 }
+/***************Loading Animation*****************/
+@keyframes wineLoading {
+  0% {
+    transform: translate(0, 85%);
+  }
+  // 20% {
+  //   transform: translate(-450px, 80%);
+  // }
+  // 40% {
+  //   transform: translate(-900px, 60%);
+  // }
+  // 60% {
+  //   transform: translate(-1350px, 40%);
+  // }
+  // 80% {
+  //   transform: translate(-1800px, 20%);
+  // }
+  100% {
+    transform: translate(-2250px, -13%);
+  }
+}
+@keyframes lettersAnimation {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes underlineAnimation {
+  0% {
+    transform-origin: left;
+    transform: scaleX(5%);
+  }
+  25% {
+    transform: scaleX(105%);
+  }
+  50% {
+    transform-origin: right;
+    transform: scaleX(5%);
+  }
+  75% {
+    transform: scaleX(105%);
+  }
+  100% {
+    transform-origin: left;
+    transform: scaleX(5%);
+  }
+}

@@ -133,18 +133,6 @@
       width: 95%;
     }
     @include meal-delay-displayer($meal-delay-displayer);
-    // &:nth-child(3) {
-    //   animation: mealsAppear 0.4s 0.1s ease-in-out forwards;
-    // }
-    // &:nth-child(5) {
-    //   animation: mealsAppear 0.4s 0.3s ease-in-out forwards;
-    // }
-    // &:nth-child(7) {
-    //   animation: mealsAppear 0.4s 0.5s ease-in-out forwards;
-    // }
-    // &:nth-child(9) {
-    //   animation: mealsAppear 0.4s 0.7s ease-in-out forwards;
-    // }
     &:hover {
       span {
         transform: translateX(-70px);
