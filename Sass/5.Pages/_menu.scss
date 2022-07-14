@@ -1,32 +1,8 @@
-.img-menu-container {
-  width: 100%;
-  height: 260px;
-  @media screen and (max-width: 768px) {
-    height: 190px;
-  }
-  &#paletteGout {
-    background: url("../../assets/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg")
-      center/cover;
-  }
-  &#noteEnchantee {
-    background: url("../../assets/images/stil-u2Lp8tXIcjw-unsplash.jpg")
-      center/cover;
-  }
-  &#francaise {
-    background: url("../../assets/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg")
-      center/cover;
-  }
-  &#delice {
-    background: url("../../assets/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg")
-      center/cover;
-  }
-}
 .menu {
   background-color: $bg-shade-2;
   border-radius: 25px 25px 0 0;
   position: relative;
   top: -26px;
-  // height: 610px;
   @media screen and (min-width: 1024px) {
     padding: 35px 35px 10px;
   }
@@ -101,15 +77,13 @@
     button {
       grid-area: btn;
       padding: 15px 40px;
+      width: 220px;
+      height: 50px;
       @media screen and (min-width: 1024px) {
-        width: 220px;
-        height: 50px;
         bottom: -20px;
         left: 41%;
       }
       @media screen and (min-width: 768px) and (max-width: 1024px) {
-        width: 220px;
-        height: 50px;
         bottom: -200px;
         left: 24%;
       }
@@ -158,19 +132,19 @@
     @media screen and (max-width: 768px) {
       width: 95%;
     }
-
-    &:nth-child(3) {
-      animation: mealsAppear 0.4s 0.1s ease-in-out forwards;
-    }
-    &:nth-child(5) {
-      animation: mealsAppear 0.4s 0.3s ease-in-out forwards;
-    }
-    &:nth-child(7) {
-      animation: mealsAppear 0.4s 0.5s ease-in-out forwards;
-    }
-    &:nth-child(9) {
-      animation: mealsAppear 0.4s 0.7s ease-in-out forwards;
-    }
+    @include meal-delay-displayer($meal-delay-displayer);
+    // &:nth-child(3) {
+    //   animation: mealsAppear 0.4s 0.1s ease-in-out forwards;
+    // }
+    // &:nth-child(5) {
+    //   animation: mealsAppear 0.4s 0.3s ease-in-out forwards;
+    // }
+    // &:nth-child(7) {
+    //   animation: mealsAppear 0.4s 0.5s ease-in-out forwards;
+    // }
+    // &:nth-child(9) {
+    //   animation: mealsAppear 0.4s 0.7s ease-in-out forwards;
+    // }
     &:hover {
       span {
         transform: translateX(-70px);
@@ -214,27 +188,21 @@
   }
   &-starter {
     grid-area: strt;
-    @include columnCenter;
-    gap: 15px;
-    margin-bottom: 20px;
+    @include strt-dsh-dsrt-behavior;
     &__check-container {
       @include checkContainer;
     }
   }
   &-dishes {
     grid-area: dsh;
-    @include columnCenter;
-    gap: 15px;
-    margin-bottom: 20px;
+    @include strt-dsh-dsrt-behavior;
     &__check-container {
       @include checkContainer;
     }
   }
   &-desserts {
     grid-area: dsrt;
-    @include columnCenter;
-    gap: 15px;
-    margin-bottom: 20px;
+    @include strt-dsh-dsrt-behavior;
     &__check-container {
       @include checkContainer;
     }

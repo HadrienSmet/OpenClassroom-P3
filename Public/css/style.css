@@ -13,6 +13,7 @@
 /*TOOLS*/
 /***********************Gradients**************************/
 /***********************Shadows****************************/
+/************************Tools*****************************/
 @media screen and (min-width: 1024px) {
   #home {
     height: 650px;
@@ -58,6 +59,7 @@ img {
 /*TOOLS*/
 /***********************Gradients**************************/
 /***********************Shadows****************************/
+/************************Tools*****************************/
 @keyframes btnHoverEffect {
   0%, 5% {
     transform: translateY(0);
@@ -134,6 +136,29 @@ img {
 /*TOOLS*/
 /***********************Gradients**************************/
 /***********************Shadows****************************/
+/************************Tools*****************************/
+.img-menu-container {
+  width: 100%;
+  height: 260px;
+}
+@media screen and (max-width: 768px) {
+  .img-menu-container {
+    height: 190px;
+  }
+}
+.img-menu-container#paletteGout {
+  background: url("../../assets/images/paletteGout.jpg") center/cover;
+}
+.img-menu-container#noteEnchantee {
+  background: url("../../assets/images/noteEnchantee.jpg") center/cover;
+}
+.img-menu-container#francaise {
+  background: url("../../assets/images/francaise.jpg") center/cover;
+}
+.img-menu-container#delice {
+  background: url("../../assets/images/delice.jpg") center/cover;
+}
+
 .btn {
   position: relative;
   overflow: hidden;
@@ -686,28 +711,6 @@ header i:nth-child(1):active + #purple {
   color: #9356dc;
 }
 
-.img-menu-container {
-  width: 100%;
-  height: 260px;
-}
-@media screen and (max-width: 768px) {
-  .img-menu-container {
-    height: 190px;
-  }
-}
-.img-menu-container#paletteGout {
-  background: url("../../assets/images/jay-wennington-N_Y88TWmGwA-unsplash.jpg") center/cover;
-}
-.img-menu-container#noteEnchantee {
-  background: url("../../assets/images/stil-u2Lp8tXIcjw-unsplash.jpg") center/cover;
-}
-.img-menu-container#francaise {
-  background: url("../../assets/images/toa-heftiba-DQKerTsQwi0-unsplash.jpg") center/cover;
-}
-.img-menu-container#delice {
-  background: url("../../assets/images/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg") center/cover;
-}
-
 .menu {
   background-color: #f7f6f6;
   border-radius: 25px 25px 0 0;
@@ -795,19 +798,17 @@ header i:nth-child(1):active + #purple {
 .menu form button {
   grid-area: btn;
   padding: 15px 40px;
+  width: 220px;
+  height: 50px;
 }
 @media screen and (min-width: 1024px) {
   .menu form button {
-    width: 220px;
-    height: 50px;
     bottom: -20px;
     left: 41%;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .menu form button {
-    width: 220px;
-    height: 50px;
     bottom: -200px;
     left: 24%;
   }
@@ -907,11 +908,11 @@ header i:nth-child(1):active + #purple {
 }
 .menu-starter {
   grid-area: strt;
+  gap: 15px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
 }
 .menu-starter__check-container {
   position: absolute;
@@ -926,11 +927,11 @@ header i:nth-child(1):active + #purple {
 }
 .menu-dishes {
   grid-area: dsh;
+  gap: 15px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
 }
 .menu-dishes__check-container {
   position: absolute;
@@ -945,11 +946,11 @@ header i:nth-child(1):active + #purple {
 }
 .menu-desserts {
   grid-area: dsrt;
+  gap: 15px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
 }
 .menu-desserts__check-container {
   position: absolute;

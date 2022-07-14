@@ -16,3 +16,32 @@
   transform-origin: right;
   transition: 0.4s ease-in-out;
 }
+@mixin strt-dsh-dsrt-behavior {
+  gap: 15px;
+  margin-bottom: 20px;
+  @include columnCenter;
+}
+@mixin background-displayer($background-displayer) {
+  @each $menu in $background-displayer {
+    &##{$menu} {
+      background: url("../../assets/images/#{$menu}.jpg") center/cover;
+    }
+  }
+}
+@mixin delay-displayer($delay-displayer) {
+  @each $i, $delay in $delay-displayer {
+    &:nth-child(#{$i}) {
+      animation: mealsAppear-desktop 0.4s #{$delay} ease-in-out forwards;
+      @media screen and (max-width: 768px) {
+        animation: mealsAppear 0.4s #{$delay} ease-in-out forwards;
+      }
+    }
+  }
+}
+@mixin meal-delay-displayer($meal-delay-displayer) {
+  @each $i, $delay in $meal-delay-displayer {
+    &:nth-child(#{$i}) {
+      animation: mealsAppear 0.4s #{$delay} ease-in-out forwards;
+    }
+  }
+}
