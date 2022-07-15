@@ -20,10 +20,6 @@
     width: 100%;
   }
 }
-#animation-bg {
-  color: #fface8;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -660,7 +656,7 @@ header i:nth-child(1):active + #purple {
   font-weight: 900;
 }
 .restaurants-search button {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .explanations {

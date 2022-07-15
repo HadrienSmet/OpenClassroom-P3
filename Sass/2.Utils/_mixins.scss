@@ -28,12 +28,12 @@
     }
   }
 }
-@mixin delay-displayer($delay-displayer) {
-  @each $i, $delay in $delay-displayer {
+@mixin delay-displayer() {
+  @for $i from 1 through 4 {
     &:nth-child(#{$i}) {
-      animation: mealsAppear-desktop 0.4s #{$delay} ease-in-out forwards;
+      animation: mealsAppear-desktop 0.4s counterDelay($i) ease-in-out forwards;
       @media screen and (max-width: 768px) {
-        animation: mealsAppear 0.4s #{$delay} ease-in-out forwards;
+        animation: mealsAppear 0.4s counterDelay($i) ease-in-out forwards;
       }
     }
   }
@@ -45,10 +45,10 @@
     }
   }
 }
-@mixin letters-delay-displayer($letters-delay-displayer) {
-  @each $i, $delay in $letters-delay-displayer {
+@mixin letters-delay-displayer() {
+  @for $i from 1 through 10 {
     &:nth-child(#{$i}) .neon {
-      animation-delay: #{$delay};
+      animation-delay: lettersCounterDelay($i);
     }
   }
 }

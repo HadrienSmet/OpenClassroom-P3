@@ -74,7 +74,7 @@
     font-family: "fonts-header";
     display: inline-block;
     color: lighten($secondary-color, 22%);
-    @include letters-delay-displayer($letters-delay-displayer);
+    @include letters-delay-displayer();
     .neon {
       font-family: "fonts-header";
       position: absolute;
