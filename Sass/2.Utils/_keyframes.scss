@@ -1,14 +1,14 @@
 @import "./variables";
 @keyframes btnHoverEffect {
   0%,
-  5% {
+  8% {
     transform: translateY(0);
     box-shadow: $btn-shadow;
     -webkit-box-shadow: $btn-shadow;
     -moz-box-shadow: $btn-shadow;
   }
   100% {
-    transform: translateY(-5%) scaleX(1.05);
+    transform: translateY(-8%) scaleX(1.05);
     box-shadow: $btn-shadowHover;
     -webkit-box-shadow: $btn-shadowHover;
     -moz-box-shadow: $btn-shadowHover;
@@ -18,9 +18,9 @@
   0% {
     transform: rotate(0);
   }
-  10% {
-    transform: rotate(15deg);
-  }
+  // 10% {
+  //   transform: rotate(15deg);
+  // }
   100% {
     transform: translate(-20px, -50px) rotate(110deg);
   }
@@ -74,18 +74,6 @@
   0% {
     transform: translate(0, 85%);
   }
-  // 20% {
-  //   transform: translate(-450px, 80%);
-  // }
-  // 40% {
-  //   transform: translate(-900px, 60%);
-  // }
-  // 60% {
-  //   transform: translate(-1350px, 40%);
-  // }
-  // 80% {
-  //   transform: translate(-1800px, 20%);
-  // }
   100% {
     transform: translate(-2250px, -13%);
   }

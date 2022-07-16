@@ -27,8 +27,6 @@ footer {
     gap: 5px;
     height: unset;
     position: relative;
-    // transform: translateY(-25px);
-    // bottom: 0;
   }
   a {
     color: $clr-1;
@@ -69,7 +67,6 @@ footer {
       position: absolute;
       width: 3px;
       height: 15px;
-      // border-radius: 10px;
       background-color: $third-color;
       left: -20px;
       top: 0px;

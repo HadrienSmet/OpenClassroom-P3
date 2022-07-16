@@ -2,26 +2,20 @@
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  background: rgb(255, 226, 247);
+  background: rgb(231, 255, 249);
   background: linear-gradient(
     180deg,
-    rgba(255, 226, 247, 1) 72%,
-    rgba(255, 121, 218, 1) 100%
+    rgba(231, 255, 249, 1) 60%,
+    rgba(153, 226, 208, 1) 100%
   );
-  display: flex;
   gap: 20px;
-  align-items: center;
-  justify-content: center;
+  @include childCenter;
 }
 .glass {
-  // position: absolute;
-  // top: 40%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
   &-cup {
     position: relative;
     overflow: hidden;
-    border: 5px solid #80d3fde0;
+    border: 5px solid #80d3fd84;
     border-radius: 0 0 60px 60px;
     height: 105px;
     width: 95px;
@@ -50,7 +44,7 @@
     );
     height: 65px;
     width: 95px;
-    background-color: #80d3fde0;
+    background-color: #80d3fd8a;
     position: relative;
     transform: translateY(-5px);
   }
@@ -73,12 +67,15 @@
     font-size: 80px;
     font-family: "fonts-header";
     display: inline-block;
-    color: lighten($secondary-color, 22%);
-    @include letters-delay-displayer();
+    color: lighten($third-color, 15%);
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) .neon {
+        animation-delay: lettersCounterDelay($i);
+      }
+    }
     .neon {
       font-family: "fonts-header";
       position: absolute;
-      // top: 0;
       color: $primary-color;
       text-shadow: 0 0 10px #9256dcd3;
       opacity: 0;

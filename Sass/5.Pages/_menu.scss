@@ -60,7 +60,7 @@
   form {
     @media screen and (min-width: 1024px) {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 1fr 100px;
       grid-template-areas:
         "strt dsh dsrt"
@@ -132,7 +132,11 @@
     @media screen and (max-width: 768px) {
       width: 95%;
     }
-    @include meal-delay-displayer($meal-delay-displayer);
+    @each $i, $delay in $meal-delay-displayer {
+      &:nth-child(#{$i}) {
+        animation: mealsAppear 0.4s #{$delay} ease-in-out forwards;
+      }
+    }
     &:hover {
       span {
         transform: translateX(-70px);

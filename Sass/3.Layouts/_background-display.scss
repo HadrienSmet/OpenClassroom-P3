@@ -4,5 +4,9 @@
   @media screen and (max-width: 768px) {
     height: 190px;
   }
-  @include background-displayer($background-displayer);
+  @each $menu in $background-displayer {
+    &##{$menu} {
+      background: url("../../assets/images/#{$menu}.jpg") center/cover;
+    }
+  }
 }

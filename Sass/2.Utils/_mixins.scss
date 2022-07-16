@@ -3,6 +3,11 @@
   flex-direction: column;
   align-items: center;
 }
+@mixin childCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @mixin checkContainer {
   position: absolute;
   right: 0;
@@ -20,35 +25,4 @@
   gap: 15px;
   margin-bottom: 20px;
   @include columnCenter;
-}
-@mixin background-displayer($background-displayer) {
-  @each $menu in $background-displayer {
-    &##{$menu} {
-      background: url("../../assets/images/#{$menu}.jpg") center/cover;
-    }
-  }
-}
-@mixin delay-displayer() {
-  @for $i from 1 through 4 {
-    &:nth-child(#{$i}) {
-      animation: mealsAppear-desktop 0.4s counterDelay($i) ease-in-out forwards;
-      @media screen and (max-width: 768px) {
-        animation: mealsAppear 0.4s counterDelay($i) ease-in-out forwards;
-      }
-    }
-  }
-}
-@mixin meal-delay-displayer($meal-delay-displayer) {
-  @each $i, $delay in $meal-delay-displayer {
-    &:nth-child(#{$i}) {
-      animation: mealsAppear 0.4s #{$delay} ease-in-out forwards;
-    }
-  }
-}
-@mixin letters-delay-displayer() {
-  @for $i from 1 through 10 {
-    &:nth-child(#{$i}) .neon {
-      animation-delay: lettersCounterDelay($i);
-    }
-  }
 }

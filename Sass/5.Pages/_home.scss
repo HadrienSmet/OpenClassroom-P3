@@ -3,12 +3,11 @@
   @include columnCenter;
   &__location-info {
     display: flex;
+    justify-content: center;
     background-color: $bg-shade-1;
     color: $clr-txt-secondary;
     font-size: 15px;
     font-weight: 700;
-    padding: 20px;
-    justify-content: center;
     z-index: -3;
     @media screen and (min-width: 1024px) {
       padding: 14.5px 20px;
@@ -22,6 +21,7 @@
     }
     @media screen and (max-width: 1024px) {
       width: 100%;
+      padding: 20px;
     }
     & i {
       font-size: 15px;
@@ -94,14 +94,11 @@
     box-shadow: $btn-shadow;
     transition: 0.3s;
     @media screen and (min-width: 768px) {
-      &:nth-child(2) {
-        grid-area: bt1;
-      }
-      &:nth-child(3) {
-        grid-area: bt2;
-      }
-      &:nth-child(4) {
-        grid-area: bt3;
+      @for $i from 2 through 4 {
+        $nmbr: $i - 1;
+        &:nth-child(#{$i}) {
+          grid-area: bt#{$nmbr};
+        }
       }
     }
     @media screen and (max-width: 768px) {
