@@ -1,26 +1,35 @@
 .restaurants {
   padding: 10px;
   background-color: $bg-shade-2;
-  z-index: 1;
-  box-shadow: $section-shadow;
-  -webkit-box-shadow: $section-shadow;
-  -moz-box-shadow: $section-shadow;
-  @media screen and (min-width: 1024px) {
-    padding: 30px;
-    height: 350px;
-    width: 100%;
+  z-index: 10;
+  //
+  @media screen and (min-width: 1025px) {
     position: absolute;
-    top: 347px;
+    top: 210px;
+    right: 0;
+    padding: 30px 70px;
+    height: 600px;
+    width: 70%;
+    box-shadow: $section-shadow;
+    -webkit-box-shadow: $section-shadow;
+    -moz-box-shadow: $section-shadow;
   }
   h2 {
     text-align: left;
     margin-bottom: 15px;
+    @media screen and (min-width: 1025px) {
+      margin-bottom: 35px;
+    }
+    @media screen and (max-width: 767px) {
+      margin-left: 10px;
+    }
   }
   &__cards-display {
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1025px) {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
     }
     @media screen and (max-width: 1024px) {
       display: flex;
@@ -29,7 +38,7 @@
       justify-content: space-around;
       margin: 20px 0;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       @include columnCenter;
       margin: 20px 0;
       flex-wrap: nowrap;
@@ -42,29 +51,29 @@
     transform: translateX(-30%);
     opacity: 0;
     transition: 0.3s ease-in-out;
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1025px) {
       display: block;
       position: relative;
-      height: 240px;
-      width: 22%;
+      height: 220px;
+      width: 40%;
     }
     @media screen and (max-width: 1024px) {
       width: 45%;
-      height: 200px;
+      height: 220px;
     }
-    @media screen and (max-width: 768px) {
-      width: 90%;
+    @media screen and (max-width: 767px) {
+      width: calc(100% - 20px);
       @include columnCenter;
     }
     @for $i from 1 through 4 {
       &:nth-child(#{$i}) {
         animation: mealsAppear-desktop
           0.4s
-          counterDelay($i)
+          counterDelay($i, 2)
           ease-in-out
           forwards;
-        @media screen and (max-width: 768px) {
-          animation: mealsAppear 0.4s counterDelay($i) ease-in-out forwards;
+        @media screen and (max-width: 767px) {
+          animation: mealsAppear 0.4s counterDelay($i, 2) ease-in-out forwards;
         }
       }
     }

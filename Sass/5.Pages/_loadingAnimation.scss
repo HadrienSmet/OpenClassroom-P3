@@ -62,15 +62,16 @@
     left: 0;
     transform-origin: left;
     animation: underlineAnimation 6s ease-in-out infinite;
+    opacity: 0.5;
   }
-  span {
+  div {
     font-size: 80px;
     font-family: "fonts-header";
     display: inline-block;
     color: lighten($third-color, 15%);
     @for $i from 1 through 10 {
       &:nth-child(#{$i}) .neon {
-        animation-delay: lettersCounterDelay($i);
+        animation-delay: counterDelay($i, 4);
       }
     }
     .neon {

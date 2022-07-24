@@ -5,11 +5,7 @@
     @return darken($color, 40%);
   }
 }
-@function lettersCounterDelay($i) {
-  $delay: 0.1s + (($i - 1) * 0.4s);
-  @return $delay;
-}
-@function counterDelay($i) {
-  $delay: 0.1s + (($i - 1) * 0.2s);
+@function counterDelay($i, $gap) {
+  $delay: 0.1s + (($i - 1) * ($gap * 0.1s));
   @return $delay;
 }

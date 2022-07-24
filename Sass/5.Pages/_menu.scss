@@ -3,25 +3,28 @@
   border-radius: 25px 25px 0 0;
   position: relative;
   top: -26px;
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1025px) {
     padding: 35px 35px 10px;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
     padding: 35px;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     padding: 35px 15px;
   }
   &-header {
     position: relative;
     display: flex;
     margin-bottom: 15px;
+    h1 {
+      font-size: 26px;
+    }
     i {
       font-size: 30px;
       position: absolute;
       right: 15px;
       transform: translateY(5px);
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 767px) {
         font-size: 22px;
       }
       &:nth-child(2) {
@@ -41,15 +44,18 @@
   }
   h2 {
     align-self: flex-start;
-    font-size: 20px;
+    margin-left: 10px;
+    font-size: 18px;
     position: relative;
+    text-transform: uppercase;
+    font-weight: normal;
     &::after {
       content: "";
-      width: 30px;
+      width: 45px;
       height: 3px;
       background-color: $third-color;
       position: absolute;
-      bottom: -2px;
+      bottom: -5px;
       left: 0;
       transform: scaleX(0) translateX(45px);
       opacity: 0;
@@ -58,7 +64,7 @@
     }
   }
   form {
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1025px) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: 1fr 100px;
@@ -79,7 +85,7 @@
       padding: 15px 40px;
       width: 220px;
       height: 50px;
-      @media screen and (min-width: 1024px) {
+      @media screen and (min-width: 1025px) {
         bottom: -20px;
         left: 41%;
       }
@@ -93,7 +99,11 @@
   input[type="radio"] {
     display: none;
     &:checked {
-      + label {
+      + div {
+        label,
+        p {
+          width: calc(100% - 70px);
+        }
         span {
           transform: translateX(-70px);
         }
@@ -104,97 +114,29 @@
           // transform: translateX(0);
           opacity: 1;
           i {
-            transform: rotate(-720deg);
+            transform: rotate(720deg);
           }
         }
       }
     }
   }
-  label {
-    cursor: pointer;
-    position: relative;
-    height: 70px;
-    background-color: $clr-1;
-    padding: 10px;
-    border-radius: 10px;
-    transform: translateX(-30%);
-    opacity: 0;
-    animation: mealsAppear 0.4s ease-in-out forwards;
-    display: grid;
-    grid-template-columns: 85% 15%;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-      "hdr prc"
-      "txt prc";
-    @media screen and (min-width: 768px) {
-      width: 90%;
-    }
-    @media screen and (max-width: 768px) {
-      width: 95%;
-    }
-    @each $i, $delay in $meal-delay-displayer {
-      &:nth-child(#{$i}) {
-        animation: mealsAppear 0.4s #{$delay} ease-in-out forwards;
-      }
-    }
-    &:hover {
-      span {
-        transform: translateX(-70px);
-      }
-      .menu-starter__check-container,
-      .menu-dishes__check-container,
-      .menu-desserts__check-container {
-        transform: scaleX(1);
-        // transform: translateX(0);
-        opacity: 1;
-        i {
-          transform: rotate(-360deg);
-        }
-      }
-    }
-    h3 {
-      text-align: left;
-      font-size: 14px;
-      grid-area: hdr;
-    }
-    p {
-      text-align: left;
-      font-size: 12px;
-      grid-area: txt;
-      position: absolute;
-      bottom: 0;
-    }
-    i {
-      font-size: 30px;
-      color: $clr-1;
-      padding: 20px;
-    }
-    span {
-      grid-area: prc;
-      padding-left: 10px;
-      background-color: $clr-1;
-      position: absolute;
-      bottom: 0;
-      transition: 0.3s ease-in-out;
-    }
-  }
   &-starter {
     grid-area: strt;
-    @include strt-dsh-dsrt-behavior;
+    @include strt-dsh-dsrt-choices;
     &__check-container {
       @include checkContainer;
     }
   }
   &-dishes {
     grid-area: dsh;
-    @include strt-dsh-dsrt-behavior;
+    @include strt-dsh-dsrt-choices;
     &__check-container {
       @include checkContainer;
     }
   }
   &-desserts {
     grid-area: dsrt;
-    @include strt-dsh-dsrt-behavior;
+    @include strt-dsh-dsrt-choices;
     &__check-container {
       @include checkContainer;
     }

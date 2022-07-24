@@ -1,5 +1,9 @@
 .restaurants-search {
   width: 100%;
+  @media screen and (min-width: 1025px) {
+    height: 763px;
+    top: 250px;
+  }
   @include columnCenter;
   &__location-info {
     display: flex;
@@ -9,9 +13,9 @@
     font-size: 15px;
     font-weight: 700;
     z-index: -3;
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1025px) {
       padding: 14.5px 20px;
-      width: 40%;
+      width: 50%;
       position: absolute;
       top: 0;
       right: 0;
@@ -30,18 +34,20 @@
   }
   &__button-bloc {
     background-color: $bg-shade-2;
-    box-shadow: $section-shadow;
-    -webkit-box-shadow: $section-shadow;
-    -moz-box-shadow: $section-shadow;
+    // box-shadow: $section-shadow;
+    // -webkit-box-shadow: $section-shadow;
+    // -moz-box-shadow: $section-shadow;
     z-index: 1;
     @include columnCenter;
     gap: 20px;
-    @media screen and (min-width: 1024px) {
-      padding: 60px 55px 30px;
+    @media screen and (min-width: 1025px) {
+      padding: 150px 65px 30px;
       position: absolute;
       left: 0;
-      height: 300px;
-      width: 40%;
+      top: 210px;
+      height: 600px;
+      width: 30%;
+      gap: 35px;
     }
     @media screen and (max-width: 1024px) {
       width: 100%;
@@ -50,8 +56,11 @@
     }
   }
   & strong {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 900;
+    @media screen and (min-width: 1025px) {
+      font-size: 26px;
+    }
   }
   button {
     margin-top: 20px;
@@ -60,25 +69,21 @@
 .explanations {
   gap: 20px;
   @include columnCenter;
-  @media screen and (min-width: 1024px) {
-    padding: 15px 30px;
-    height: 300px;
+  @media screen and (min-width: 1025px) {
+    padding: 15px 70px 35px;
+    // height: 354px;
     position: absolute;
+    top: 47px;
     right: 0;
-    width: 60%;
+    width: 100%;
+    @include stepGrid;
   }
   @media screen and (min-width: 768px) and (max-width: 1024px) {
-    padding: 10px 30px 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-      "hdr hdr hdr"
-      "bt1 bt2 bt3";
-    gap: 0 40px;
+    padding: 30px 30px 40px;
+    @include stepGrid;
   }
-  @media screen and (max-width: 768px) {
-    padding: 50px 20px;
+  @media screen and (max-width: 767px) {
+    padding: 30px 20px;
   }
   h2 {
     align-self: start;
@@ -87,10 +92,12 @@
     }
   }
   &__step {
+    cursor: pointer;
+    position: relative;
     display: flex;
     padding: 20px;
     background-color: $bg-shade-2;
-    border-radius: 45px;
+    border-radius: 15px;
     box-shadow: $btn-shadow;
     transition: 0.3s;
     @media screen and (min-width: 768px) {
@@ -101,9 +108,14 @@
         }
       }
     }
-    @media screen and (max-width: 768px) {
-      width: 75%;
+    @media screen and (min-width: 1025px) {
+      width: 85%;
       justify-content: center;
+    }
+    @media screen and (max-width: 768px) {
+      width: calc(100% - 10px);
+      justify-content: start;
+      margin-left: 10px;
     }
     &:hover {
       background-color: $bg-shade-3;
@@ -115,15 +127,19 @@
       border-radius: 100%;
       background-color: $primary-color;
       color: $clr-1;
-      @media screen and (min-width: 768px) {
-        transform: translateX(-30px);
+      @media screen and (min-width: 1025px) {
+        left: -10px;
       }
-      @media screen and (max-width: 768px) {
-        left: 13.5%;
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        left: -10px;
+      }
+      @media screen and (max-width: 767px) {
+        left: -10px;
       }
     }
     i {
-      margin-right: 10px;
+      margin-left: 10px;
+      margin-right: 15px;
       font-size: 15px;
     }
     &:hover i {

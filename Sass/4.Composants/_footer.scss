@@ -10,7 +10,7 @@ footer {
   display: flex;
   padding: 20px;
   background-color: $clr-txt-secondary;
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1025px) {
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
@@ -23,10 +23,11 @@ footer {
     height: 130px;
     position: relative;
   }
-  @media screen and (max-width: 678px) {
+  @media screen and (max-width: 677px) {
     gap: 5px;
     height: unset;
     position: relative;
+    padding: 20px 20px 35px;
   }
   a {
     color: $clr-1;
@@ -49,7 +50,7 @@ footer {
       }
     }
     &:hover {
-      @media screen and (min-width: 1024px) {
+      @media screen and (min-width: 1025px) {
         transform: translateX(-15px);
       }
       @media screen and (max-width: 1024px) {

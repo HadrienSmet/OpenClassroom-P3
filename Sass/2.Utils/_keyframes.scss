@@ -18,9 +18,6 @@
   0% {
     transform: rotate(0);
   }
-  // 10% {
-  //   transform: rotate(15deg);
-  // }
   100% {
     transform: translate(-20px, -50px) rotate(110deg);
   }
@@ -41,11 +38,11 @@
 }
 @keyframes mealsAppear {
   from {
-    transform: translateX(-30%);
+    transform: translateY(30%);
     opacity: 0;
   }
   to {
-    transform: translateX(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -92,20 +89,44 @@
 @keyframes underlineAnimation {
   0% {
     transform-origin: left;
-    transform: scaleX(5%);
+    transform: scaleX(0.05);
   }
   25% {
-    transform: scaleX(105%);
+    transform: scaleX(1.05);
   }
   50% {
     transform-origin: right;
-    transform: scaleX(5%);
+    transform: scaleX(0.05);
   }
   75% {
-    transform: scaleX(105%);
+    transform: scaleX(1.05);
   }
   100% {
     transform-origin: left;
-    transform: scaleX(5%);
+    transform: scaleX(0.05);
+  }
+}
+@keyframes glassAfterAnimation {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes loadingCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes translucidRotate {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
   }
 }
