@@ -10,12 +10,15 @@
     color: $clr-1;
   }
 }
+body {
+  position: relative;
+}
 h1 {
   font-family: "fonts-header";
 }
 i {
   color: $clr-txt-secondary;
-  transition: 0.3s;
+  transition: 0.6s;
 }
 a {
   text-decoration: none;

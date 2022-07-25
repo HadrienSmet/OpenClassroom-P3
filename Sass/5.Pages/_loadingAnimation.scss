@@ -1,15 +1,16 @@
 #animation-bg {
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  background: rgb(231, 255, 249);
+  height: 100%;
+  background: rgba(231, 255, 249, 0.5);
   background: linear-gradient(
     180deg,
-    rgba(231, 255, 249, 1) 60%,
-    rgba(153, 226, 208, 1) 100%
+    rgba(231, 255, 249, 0.5) 60%,
+    rgba(153, 226, 208, 0.5) 100%
   );
   gap: 20px;
   @include childCenter;
+  @media screen and (max-width: 767px) {
+    align-items: start;
+  }
 }
 .glass {
   &-cup {
@@ -19,6 +20,10 @@
     border-radius: 0 0 60px 60px;
     height: 105px;
     width: 95px;
+    @media screen and (max-width: 767px) {
+      width: 78px;
+      height: 75px;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -47,6 +52,10 @@
     background-color: #80d3fd8a;
     position: relative;
     transform: translateY(-5px);
+    @media screen and (max-width: 767px) {
+      width: 78px;
+      height: 55px;
+    }
   }
 }
 .ohmyfood {

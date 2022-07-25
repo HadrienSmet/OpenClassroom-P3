@@ -24,13 +24,13 @@
   width: 70px;
   border-radius: 0 10px 10px 0;
   background-color: $third-color;
-  //   transform: translateX(20px);
-  //   opacity: 0;
+  // transform: translateX(70px);
   transform: scaleX(0);
+  opacity: 0;
   transform-origin: right;
   transition: 0.4s ease-in-out;
 }
-@mixin strt-dsh-dsrt-choices {
+@mixin strt-dsh-dsrt-choices($previousAnimDuration) {
   gap: 15px;
   margin-bottom: 20px;
   @include columnCenter;
@@ -41,7 +41,7 @@
     background-color: $clr-1;
     padding: 10px;
     border-radius: 10px;
-    transform: translateX(-30%);
+
     opacity: 0;
     animation: mealsAppear 0.2s ease-in-out forwards;
     display: grid;
@@ -51,14 +51,16 @@
       "hdr prc"
       "txt prc";
     @media screen and (min-width: 768px) {
+      transform: translateX(-30%);
       width: 90%;
     }
     @media screen and (max-width: 767px) {
+      transform: translateY(30%);
       width: 100%;
     }
     @each $i, $delay in $meal-delay-displayer {
       &:nth-child(#{$i}) {
-        animation: mealsAppear 0.2s #{$delay} ease-in-out forwards;
+        animation-delay: calc($delay + $previousAnimDuration);
       }
     }
     &:hover {
@@ -72,8 +74,8 @@
       .menu-starter__check-container,
       .menu-dishes__check-container,
       .menu-desserts__check-container {
-        transform: scaleX(1);
         // transform: translateX(0);
+        transform: scaleX(1);
         opacity: 1;
         i {
           transform: rotate(360deg);

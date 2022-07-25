@@ -26,13 +26,17 @@
   color: white;
 }
 
+body {
+  position: relative;
+}
+
 h1 {
   font-family: "fonts-header";
 }
 
 i {
   color: rgb(53, 53, 53);
-  transition: 0.3s;
+  transition: 0.6s;
 }
 
 a {
@@ -182,6 +186,15 @@ img {
   }
   100% {
     transform: rotate(405deg);
+  }
+}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1000;
   }
 }
 /*COLORS*/
@@ -784,7 +797,7 @@ header a i {
     justify-content: center;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .explanations__step {
     width: calc(100% - 10px);
     justify-content: start;
@@ -827,15 +840,18 @@ header a i {
 }
 
 #animation-bg {
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  background: rgb(231, 255, 249);
-  background: linear-gradient(180deg, rgb(231, 255, 249) 60%, rgb(153, 226, 208) 100%);
+  height: 100%;
+  background: rgba(231, 255, 249, 0.5);
+  background: linear-gradient(180deg, rgba(231, 255, 249, 0.5) 60%, rgba(153, 226, 208, 0.5) 100%);
   gap: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: 767px) {
+  #animation-bg {
+    align-items: start;
+  }
 }
 
 .glass-cup {
@@ -845,6 +861,12 @@ header a i {
   border-radius: 0 0 60px 60px;
   height: 105px;
   width: 95px;
+}
+@media screen and (max-width: 767px) {
+  .glass-cup {
+    width: 78px;
+    height: 75px;
+  }
 }
 .glass-cup::after {
   content: "";
@@ -864,6 +886,12 @@ header a i {
   background-color: rgba(128, 211, 253, 0.5411764706);
   position: relative;
   transform: translateY(-5px);
+}
+@media screen and (max-width: 767px) {
+  .glass-foot {
+    width: 78px;
+    height: 55px;
+  }
 }
 
 .ohmyfood {
@@ -928,8 +956,22 @@ header a i {
   animation: lettersAnimation 4s linear infinite;
 }
 
+.loadingAnim {
+  backdrop-filter: blur(1.5em);
+  z-index: 10000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: fadeout 0.4s 4s ease-in-out forwards;
+}
+
 #glass {
-  position: relative;
+  position: sticky;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
   width: 350px;
   height: 350px;
   border: 5px solid #c1ede2;
@@ -940,8 +982,14 @@ header a i {
   justify-content: center;
   box-shadow: 0 0 20px rgba(54, 75, 70, 0.5294117647);
 }
-#glass:hover .glass-cup::after {
-  animation-duration: 10s;
+@media screen and (max-width: 767px) {
+  #glass {
+    left: 0;
+    top: 150px;
+    width: 190px;
+    height: 190px;
+    transform: none;
+  }
 }
 #glass::before {
   content: "";
@@ -954,7 +1002,7 @@ header a i {
   border-top: 5px solid #ff79da;
   border-right: 5px solid #ff79da;
   border-radius: 50%;
-  animation: loadingCircle 2s linear infinite;
+  animation: loadingCircle 2s linear 2;
 }
 #glass::after {
   content: "";
@@ -965,6 +1013,11 @@ header a i {
   transform-origin: left;
   animation: glassAfterAnimation 4s ease-in-out forwards;
 }
+@media screen and (max-width: 767px) {
+  #glass::after {
+    width: 78px;
+  }
+}
 #glass span {
   display: block;
   position: absolute;
@@ -974,7 +1027,7 @@ header a i {
   height: 4px;
   background-color: transparent;
   transform-origin: left;
-  animation: translucidRotate 2s linear infinite;
+  animation: translucidRotate 2s linear 2;
 }
 #glass span::before {
   content: "";
@@ -985,7 +1038,7 @@ header a i {
   height: 15px;
   border-radius: 50%;
   background-color: #ff79da;
-  box-shadow: 0 0 20px rgba(255, 121, 217, 0.8078431373), 0 0 25px rgba(255, 121, 217, 0.6352941176), 0 0 30px rgba(255, 121, 217, 0.537254902), 0 0 35px rgba(255, 121, 217, 0.4039215686), 0 0 40px rgba(255, 121, 217, 0.1843137255);
+  box-shadow: 0 0 20px rgba(255, 121, 217, 0.8078431373);
 }
 
 .menu {
@@ -1029,7 +1082,7 @@ header a i {
   }
 }
 .menu-header i:nth-child(2) {
-  z-index: 2;
+  z-index: 1;
 }
 .menu-header i:nth-child(2):hover {
   opacity: 0;
@@ -1132,7 +1185,6 @@ header a i {
   background-color: white;
   padding: 10px;
   border-radius: 10px;
-  transform: translateX(-30%);
   opacity: 0;
   animation: mealsAppear 0.2s ease-in-out forwards;
   display: grid;
@@ -1142,25 +1194,27 @@ header a i {
 }
 @media screen and (min-width: 768px) {
   .menu-starter > div {
+    transform: translateX(-30%);
     width: 90%;
   }
 }
 @media screen and (max-width: 767px) {
   .menu-starter > div {
+    transform: translateY(30%);
     width: 100%;
   }
 }
 .menu-starter > div:nth-child(3) {
-  animation: mealsAppear 0.2s 0.1s ease-in-out forwards;
+  animation-delay: 4.1s;
 }
 .menu-starter > div:nth-child(5) {
-  animation: mealsAppear 0.2s 0.2s ease-in-out forwards;
+  animation-delay: 4.2s;
 }
 .menu-starter > div:nth-child(7) {
-  animation: mealsAppear 0.2s 0.3s ease-in-out forwards;
+  animation-delay: 4.3s;
 }
 .menu-starter > div:nth-child(9) {
-  animation: mealsAppear 0.2s 0.4s ease-in-out forwards;
+  animation-delay: 4.4s;
 }
 .menu-starter > div:hover label,
 .menu-starter > div:hover p {
@@ -1221,6 +1275,7 @@ header a i {
   border-radius: 0 10px 10px 0;
   background-color: #99e2d0;
   transform: scaleX(0);
+  opacity: 0;
   transform-origin: right;
   transition: 0.4s ease-in-out;
 }
@@ -1239,7 +1294,6 @@ header a i {
   background-color: white;
   padding: 10px;
   border-radius: 10px;
-  transform: translateX(-30%);
   opacity: 0;
   animation: mealsAppear 0.2s ease-in-out forwards;
   display: grid;
@@ -1249,25 +1303,27 @@ header a i {
 }
 @media screen and (min-width: 768px) {
   .menu-dishes > div {
+    transform: translateX(-30%);
     width: 90%;
   }
 }
 @media screen and (max-width: 767px) {
   .menu-dishes > div {
+    transform: translateY(30%);
     width: 100%;
   }
 }
 .menu-dishes > div:nth-child(3) {
-  animation: mealsAppear 0.2s 0.1s ease-in-out forwards;
+  animation-delay: 4.4s;
 }
 .menu-dishes > div:nth-child(5) {
-  animation: mealsAppear 0.2s 0.2s ease-in-out forwards;
+  animation-delay: 4.5s;
 }
 .menu-dishes > div:nth-child(7) {
-  animation: mealsAppear 0.2s 0.3s ease-in-out forwards;
+  animation-delay: 4.6s;
 }
 .menu-dishes > div:nth-child(9) {
-  animation: mealsAppear 0.2s 0.4s ease-in-out forwards;
+  animation-delay: 4.7s;
 }
 .menu-dishes > div:hover label,
 .menu-dishes > div:hover p {
@@ -1328,6 +1384,7 @@ header a i {
   border-radius: 0 10px 10px 0;
   background-color: #99e2d0;
   transform: scaleX(0);
+  opacity: 0;
   transform-origin: right;
   transition: 0.4s ease-in-out;
 }
@@ -1346,7 +1403,6 @@ header a i {
   background-color: white;
   padding: 10px;
   border-radius: 10px;
-  transform: translateX(-30%);
   opacity: 0;
   animation: mealsAppear 0.2s ease-in-out forwards;
   display: grid;
@@ -1356,25 +1412,27 @@ header a i {
 }
 @media screen and (min-width: 768px) {
   .menu-desserts > div {
+    transform: translateX(-30%);
     width: 90%;
   }
 }
 @media screen and (max-width: 767px) {
   .menu-desserts > div {
+    transform: translateY(30%);
     width: 100%;
   }
 }
 .menu-desserts > div:nth-child(3) {
-  animation: mealsAppear 0.2s 0.1s ease-in-out forwards;
+  animation-delay: 4.7s;
 }
 .menu-desserts > div:nth-child(5) {
-  animation: mealsAppear 0.2s 0.2s ease-in-out forwards;
+  animation-delay: 4.8s;
 }
 .menu-desserts > div:nth-child(7) {
-  animation: mealsAppear 0.2s 0.3s ease-in-out forwards;
+  animation-delay: 4.9s;
 }
 .menu-desserts > div:nth-child(9) {
-  animation: mealsAppear 0.2s 0.4s ease-in-out forwards;
+  animation-delay: 5s;
 }
 .menu-desserts > div:hover label,
 .menu-desserts > div:hover p {
@@ -1435,6 +1493,7 @@ header a i {
   border-radius: 0 10px 10px 0;
   background-color: #99e2d0;
   transform: scaleX(0);
+  opacity: 0;
   transform-origin: right;
   transition: 0.4s ease-in-out;
 }

@@ -28,7 +28,7 @@
         font-size: 22px;
       }
       &:nth-child(2) {
-        z-index: 2;
+        z-index: 1;
         &:hover {
           opacity: 0;
           + i {
@@ -122,21 +122,21 @@
   }
   &-starter {
     grid-area: strt;
-    @include strt-dsh-dsrt-choices;
+    @include strt-dsh-dsrt-choices(4s);
     &__check-container {
       @include checkContainer;
     }
   }
   &-dishes {
     grid-area: dsh;
-    @include strt-dsh-dsrt-choices;
+    @include strt-dsh-dsrt-choices(4.3s);
     &__check-container {
       @include checkContainer;
     }
   }
   &-desserts {
     grid-area: dsrt;
-    @include strt-dsh-dsrt-choices;
+    @include strt-dsh-dsrt-choices(4.6s);
     &__check-container {
       @include checkContainer;
     }
